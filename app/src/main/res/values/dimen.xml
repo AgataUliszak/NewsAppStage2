@@ -5,7 +5,7 @@
     <dimen name="dimen_10">10dp</dimen>
     <dimen name="dimen_3">3dp</dimen>
     <dimen name="height">250dp</dimen>
-    <dimen name="text_size_basic">20sp</dimen>
+    <dimen name="text_size_basic">18sp</dimen>
     <dimen name="text_size_title">20sp</dimen>
     <dimen name="text_size">14sp</dimen>
 </resources>

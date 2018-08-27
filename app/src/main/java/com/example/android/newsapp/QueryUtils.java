@@ -188,8 +188,13 @@ public final class QueryUtils {
                 artDate = formatDate(artDate);
                 String artTitle = currentArticle.getString(KEY_TITLE);
                 String artUrl = currentArticle.getString(KEY_URL);
-                String artAuthor = currentArticle.getJSONArray(KEY_JSON_ARRAY_TAGS).getJSONObject(0).getString(KEY_TITLE);
 
+                String artAuthor = null;
+                JSONArray tagsArray = currentArticle.optJSONArray(KEY_JSON_ARRAY_TAGS);
+                for (int j = 0; j <tagsArray.length(); j++) {
+                    JSONObject withAuthorObject = tagsArray.getJSONObject(j);
+                    artAuthor = withAuthorObject.optString(KEY_TITLE);
+                }
                 // Create a new {@link NewsApp} object with the artTitle, secName,artDate,artAuthor and url.
                 Article article = new Article(artTitle, artAuthor, artSection, artDate,  artUrl);
                 // Add the new {@link Earthquake} to the list of earthquakes.
